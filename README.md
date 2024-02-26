@@ -32,7 +32,6 @@ The following JSON structure represents the configuration of the RAMI 4.0 Cube w
 ## Microsystem Interaction Matrix Configuration
 The JSON configuration below defines the interaction matrix between microsystems. It specifies the type of interactions, the direction of services, and descriptions of those services.
 
-```json
 
 {
   "interactionMatrix": {

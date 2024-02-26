@@ -1,11 +1,10 @@
-# RAMI4.0-VIZ
+# RAMI4.0-VIZ for Smart Manufacturing Ecosystems
 RAMI4.0 Visualizations
-
-# Smart Manufacturing Ecosystem Configurations
 
 This repository contains JSON templates that are crucial for setting up the configuration of smart manufacturing ecosystems. These configurations are designed to map out the RAMI 4.0 Cube dimensions and to define the interactions between different microsystems within the ecosystem.
 
-## RAMI 4.0 Cube Configuration
+## RAMI 4.0 Cube Configuration and System of Microsystems Interaction Matrix Configuration
+
 
 The following JSON structure represents the configuration of the RAMI 4.0 Cube which outlines the dimensions and coordinates of various microsystems.
 
@@ -29,7 +28,6 @@ The following JSON structure represents the configuration of the RAMI 4.0 Cube w
   }
 }
 
-## Microsystem Interaction Matrix Configuration
 The JSON configuration below defines the interaction matrix between microsystems. It specifies the type of interactions, the direction of services, and descriptions of those services.
 
 

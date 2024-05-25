@@ -1,4 +1,7 @@
 # RAMI4.0 Value Chain Visualization Tool for Smart Manufacturing Ecosystems
+
+<img width="1512" alt="RAMI4 0-Value-Chain-Visualization-Tool-salman" src="https://github.com/javedsalman/RAMI4.0-VIZ/assets/71730474/45e8c74b-8bb9-4662-a311-974c32796344">
+
 RAMI4.0 Visualizations
 This repository contains the Proof of Concept of the RAMI4.0-IZ tool. 
 This is a beta version of the code for generating the RAMI4.0 Visualization. It is a work in progress.

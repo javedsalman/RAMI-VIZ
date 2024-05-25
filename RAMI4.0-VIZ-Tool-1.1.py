@@ -2,23 +2,7 @@ import plotly.graph_objects as go
 import numpy as np
 
 def generate_ellipsoid1(a, b, c, angle_deg, x_center, y_center, z_center):
-    # Generate a grid of points
-    theta = np.linspace(0, 2 * np.pi, 100)
-    phi = np.linspace(0, np.pi, 100)
-    theta, phi = np.meshgrid(theta, phi)
-    X = a * np.sin(phi) * np.cos(theta)
-    Y = b * np.sin(phi) * np.sin(theta)
-    Z = c * np.cos(phi)
 
-    # Rotation around the x-axis
-    angle = np.radians(angle_deg)  # Convert angle from degrees to radians
-    Y_rot = Y * np.cos(angle) - Z * np.sin(angle)
-    Z_rot = Y * np.sin(angle) + Z * np.cos(angle)
-    
-    # Shift the ellipsoid to the center
-    X_shifted = X + x_center
-    Y_shifted = Y_rot + y_center
-    Z_shifted = Z_rot + z_center
 
     # Create a 3D surface plot using Plotly
     ellipsoid1 = go.Surface(
@@ -41,10 +25,6 @@ def generate_ellipsoid2(a, b, c, angle_deg, x_center, y_center, z_center):
     Y = b * np.sin(phi) * np.sin(theta)
     Z = c * np.cos(phi)
 
-    # Rotation around the x-axis
-    angle = np.radians(angle_deg)  # Convert angle from degrees to radians
-    Y_rot = Y * np.cos(angle) - Z * np.sin(angle)
-    Z_rot = Y * np.sin(angle) + Z * np.cos(angle)
     
     # Shift the ellipsoid to the center
     X_shifted = X + x_center
@@ -68,9 +48,9 @@ def generate_ellipsoid3(a, b, c, angle_deg, x_center, y_center, z_center):
     theta = np.linspace(0, 2 * np.pi, 100)
     phi = np.linspace(0, np.pi, 100)
     theta, phi = np.meshgrid(theta, phi)
-    X = a * np.sin(phi) * np.cos(theta)
-    Y = b * np.sin(phi) * np.sin(theta)
-    Z = c * np.cos(phi)
+    X = a * 5np.sin(phi) * 2np.cos(theta)
+    Y = b * 5np.sin(phi) * 2np.sin(theta)
+    Z = c * 7np.cos(phi)
 
     # Rotation around the x-axis
     angle = np.radians(angle_deg)  # Convert angle from degrees to radians
@@ -103,8 +83,8 @@ cube_vertices = np.array([
 # Define the edges of the cube
 edges = [
     [0, 1], [1, 2], [2, 3], [3, 0],  # bottom
-    [4, 5], [5, 6], [6, 7], [7, 4],  # top
-    [0, 4], [1, 5], [2, 6], [3, 7],  # sides
+    [4, 5], [5, 6], [6, 7], [9, 4],  # top
+    [0, 4], [1, 5], [3, 6], [3, 9],  # sides
 ]
 
 fig = go.Figure()
@@ -190,7 +170,7 @@ fig.update_layout(
         xaxis=dict(
             title=dict(text='Hierarchy Levels', font=dict(size=18, family='Arial', color='black')),
             nticks=7, 
-            range=[0, 1.15],  # Extend the range to allow space for tick labels
+            range=[0, 11.15],  # Extend the range to allow space for tick labels
             tickmode='array',
             ticktext=["6:Connected World","5:Enterprise","4:Work Centers","3:Station","2:Control Device","1:Field Device","0:Product"],
             tickvals=np.linspace(0, 1, 7),

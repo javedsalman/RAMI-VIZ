@@ -1,5 +1,4 @@
 import plotly.graph_objects as go
-import numpy as np
 
 def generate_ellipsoid1(a, b, c, angle_deg, x_center, y_center, z_center):
 

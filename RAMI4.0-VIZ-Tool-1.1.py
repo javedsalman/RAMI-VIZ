@@ -1,7 +1,7 @@
 import plotly.graph_objects as go
 import numpy as np
 
-def generate_ellipsoid(a, b, c, angle_deg, x_center, y_center, z_center):
+def generate_ellipsoid1(a, b, c, angle_deg, x_center, y_center, z_center):
     # Generate a grid of points
     theta = np.linspace(0, 2 * np.pi, 100)
     phi = np.linspace(0, np.pi, 100)
@@ -21,7 +21,7 @@ def generate_ellipsoid(a, b, c, angle_deg, x_center, y_center, z_center):
     Z_shifted = Z_rot + z_center
 
     # Create a 3D surface plot using Plotly
-    ellipsoid = go.Surface(
+    ellipsoid1 = go.Surface(
         x=X_shifted, y=Y_shifted, z=Z_shifted,
         colorscale=[[0, 'rgb(180, 0, 0)'], [1, 'rgb(220, 20, 20)']],
         showscale=False,
@@ -30,7 +30,69 @@ def generate_ellipsoid(a, b, c, angle_deg, x_center, y_center, z_center):
         lightposition=dict(x=200, y=200, z=200)
     )
 
-    return ellipsoid
+    return ellipsoid1
+
+def generate_ellipsoid2(a, b, c, angle_deg, x_center, y_center, z_center):
+    # Generate a grid of points
+    theta = np.linspace(0, 2 * np.pi, 100)
+    phi = np.linspace(0, np.pi, 100)
+    theta, phi = np.meshgrid(theta, phi)
+    X = a * np.sin(phi) * np.cos(theta)
+    Y = b * np.sin(phi) * np.sin(theta)
+    Z = c * np.cos(phi)
+
+    # Rotation around the x-axis
+    angle = np.radians(angle_deg)  # Convert angle from degrees to radians
+    Y_rot = Y * np.cos(angle) - Z * np.sin(angle)
+    Z_rot = Y * np.sin(angle) + Z * np.cos(angle)
+    
+    # Shift the ellipsoid to the center
+    X_shifted = X + x_center
+    Y_shifted = Y_rot + y_center
+    Z_shifted = Z_rot + z_center
+
+    # Create a 3D surface plot using Plotly
+    ellipsoid2 = go.Surface(
+        x=X_shifted, y=Y_shifted, z=Z_shifted,
+        colorscale=[[0, 'rgb(0, 0, 180)'], [1, 'rgb(20, 20, 220)']],
+        showscale=False,
+        opacity=0.8,
+        lighting=dict(ambient=0.5, diffuse=0.5, roughness=0.1, specular=0.01, fresnel=0.01),
+        lightposition=dict(x=200, y=200, z=200)
+    )
+
+    return ellipsoid2
+
+def generate_ellipsoid3(a, b, c, angle_deg, x_center, y_center, z_center):
+    # Generate a grid of points
+    theta = np.linspace(0, 2 * np.pi, 100)
+    phi = np.linspace(0, np.pi, 100)
+    theta, phi = np.meshgrid(theta, phi)
+    X = a * np.sin(phi) * np.cos(theta)
+    Y = b * np.sin(phi) * np.sin(theta)
+    Z = c * np.cos(phi)
+
+    # Rotation around the x-axis
+    angle = np.radians(angle_deg)  # Convert angle from degrees to radians
+    Y_rot = Y * np.cos(angle) - Z * np.sin(angle)
+    Z_rot = Y * np.sin(angle) + Z * np.cos(angle)
+    
+    # Shift the ellipsoid to the center
+    X_shifted = X + x_center
+    Y_shifted = Y_rot + y_center
+    Z_shifted = Z_rot + z_center
+
+    # Create a 3D surface plot using Plotly
+    ellipsoid3 = go.Surface(
+        x=X_shifted, y=Y_shifted, z=Z_shifted,
+        colorscale=[[0, 'rgb(0, 180, 0)'], [1, 'rgb(20, 220, 20)']],
+        showscale=False,
+        opacity=0.8,
+        lighting=dict(ambient=0.5, diffuse=0.5, roughness=0.1, specular=0.01, fresnel=0.01),
+        lightposition=dict(x=200, y=200, z=200)
+    )
+
+    return ellipsoid3
 
 # Define the vertices of the cube
 cube_vertices = np.array([
@@ -80,25 +142,50 @@ for i, z in enumerate(z_layers):
     ))
 
 # Parameters for the ellipsoid
-a = 0.025  # Adjusted semi-major axis along the x-axis to fit within the cube
-b = 0.025  # Adjusted semi-major axis along the y-axis to fit within the cube
-c = 0.125  # Adjusted semi-minor axis along the z-axis to fit within the cube
-angle_deg = 180  # Angle to tilt the ellipsoid
+a1 = 0.025  # Adjusted semi-major axis along the x-axis to fit within the cube
+b1 = 0.025  # Adjusted semi-major axis along the y-axis to fit within the cube
+c1 = 0.125  # Adjusted semi-minor axis along the z-axis to fit within the cube
+angle_deg1 = 180  # Angle to tilt the ellipsoid
 
 # Define the centers based on the provided ranges
-x_center = 0.67  # Between "Field Device" and "Control Device" (converted to cube scale)
-y_center = 0.6  # Between "Production: 2" and "Maintenance/Usage: 3" (converted to cube scale)
-z_center = 0.27  # Between "Asset: 0" and "Communication: 2" (converted to cube scale)
+x_center1 = 0.67  # Between "Field Device" and "Control Device" (converted to cube scale)
+y_center1 = 0.6  # Between "Production: 2" and "Maintenance/Usage: 3" (converted to cube scale)
+z_center1 = 0.27  # Between "Asset: 0" and "Communication: 2" (converted to cube scale)
+
+# Parameters for the ellipsoid
+a2 = 0.025  # Adjusted semi-major axis along the x-axis to fit within the cube
+b2 = 0.025  # Adjusted semi-major axis along the y-axis to fit within the cube
+c2 = 0.125  # Adjusted semi-minor axis along the z-axis to fit within the cube
+angle_deg2 = 90  # Angle to tilt the ellipsoid
+
+# Define the centers based on the provided ranges
+x_center2 = 0.2  # Between "Field Device" and "Control Device" (converted to cube scale)
+y_center2 = 0.6  # Between "Production: 2" and "Maintenance/Usage: 3" (converted to cube scale)
+z_center2 = 0.6  # Between "Asset: 0" and "Communication: 2" (converted to cube scale)
+
+# Parameters for the ellipsoid
+a3 = 0.025  # Adjusted semi-major axis along the x-axis to fit within the cube
+b3 = 0.025  # Adjusted semi-major axis along the y-axis to fit within the cube
+c3 = 0.125  # Adjusted semi-minor axis along the z-axis to fit within the cube
+angle_deg3 = 180  # Angle to tilt the ellipsoid
+
+# Define the centers based on the provided ranges
+x_center3 = 0.5  # Between "Field Device" and "Control Device" (converted to cube scale)
+y_center3 = 0.6  # Between "Production: 2" and "Maintenance/Usage: 3" (converted to cube scale)
+z_center3 = 0.27  # Between "Asset: 0" and "Communication: 2" (converted to cube scale)
 
 # Generate the ellipsoid
-ellipsoid = generate_ellipsoid(a, b, c, angle_deg, x_center, y_center, z_center)
-
+ellipsoid1 = generate_ellipsoid1(a1, b1, c1, angle_deg1, x_center1, y_center1, z_center1)
+ellipsoid2 = generate_ellipsoid2(a2, b2, c2, angle_deg2, x_center2, y_center2, z_center2)
+ellipsoid3 = generate_ellipsoid3(a3, b3, c3, angle_deg3, x_center3, y_center3, z_center3)
 # Add the ellipsoid to the figure
-fig.add_trace(ellipsoid)
+fig.add_trace(ellipsoid1)
+fig.add_trace(ellipsoid2)
+fig.add_trace(ellipsoid3)
 
 # Customize the layout of the plot
 fig.update_layout(
-    title='RAMI 4.0 Cube with Ellipsoid',
+    title='RAMI4.0 Value Chain Visualzation Tool',
     scene=dict(
         xaxis=dict(
             title=dict(text='Hierarchy Levels', font=dict(size=18, family='Arial', color='black')),

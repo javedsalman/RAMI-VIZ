@@ -1,5 +1,7 @@
 # RAMI4.0 Value Chain Visualization Tool for Smart Manufacturing Ecosystems
 
+<img width="1512" alt="rami-vcvt-s4" src="https://github.com/javedsalman/RAMI4.0-VIZ/assets/71730474/759993d9-d2c7-45c6-975e-0b994de34606">
+
 <img width="1512" alt="rami-vcvt-s1" src="https://github.com/javedsalman/RAMI4.0-VIZ/assets/71730474/03454cc0-befd-49bc-92d2-fa2b21c97bc1">
 
 <img width="1512" alt="rami-vcvt-s2" src="https://github.com/javedsalman/RAMI4.0-VIZ/assets/71730474/c2bf9293-4ce1-4b5b-a6ca-054ac1a1565d">

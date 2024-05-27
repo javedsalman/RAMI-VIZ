@@ -13,9 +13,9 @@ RAMI4.0 Visualizations
 This repository contains the Proof of Concept of the RAMI4.0-IZ tool. 
 This is a beta version of the code for generating the RAMI4.0 Visualization. It is a work in progress.
 The repository contains the executable file 'rami-vcvt-salman-javed', which runs on Windows, Mac OS, and Linux machines without the installation of Python.
-There is Platform Independat tool for mobile/tablets as well available at https://javedsalman.github.io/rami4_visualization-salman.html which can be opened in Safari web browser.
-The repository also contains the output file 'RAMI4.0-Value-Chain-Visualization-Tool.png' generated from the executable mentioned above.
-Below are the JSON templates that are crucial for setting up the configuration of smart manufacturing ecosystems. These configurations are designed to map out the RAMI 4.0 Cube dimensions and to define the interactions between different microsystems within the ecosystem.
+There is also a Platform-Independent tool for mobile/tablets available at https://javedsalman.github.io/rami4_visualization-salman.html. This can be opened in a Safari or Chrome web browser that supports WebGL or Hardware acceleration and Graphics.
+The repository contains the output file 'RAMI4.0-Value-Chain-Visualization-Tool.png' generated from the above executable.
+Below are the JSON templates crucial for configuring smart manufacturing ecosystems. These configurations are designed to map out the RAMI 4.0 Cube dimensions and define the interactions between different microsystems within the ecosystem.
 
 ## RAMI 4.0 Cube Configuration and System of Microsystems Interaction Matrix Configuration
 

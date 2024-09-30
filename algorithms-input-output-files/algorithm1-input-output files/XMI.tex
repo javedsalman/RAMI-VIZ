@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<systemModel>
+    <microsystem id="microsystem_01">
+        <name>Temperature Sensor</name>
+        <description>Measures temperature in the environment</description>
+        <type>Field Device</type>
+        <role>data acquisition</role>
+        <asset>Temperature Sensor Module</asset>
+        <shell>
+            <capability>provide communication</capability>
+            <capability>provide data</capability>
+        </shell>
+        <provides>sensor_data</provides>
+        <consumes>calibration_commands</consumes>
+        <stakeholder_id>stakeholder_001</stakeholder_id>
+        <stakeholder_description>Manufacturer</stakeholder_description>
+    </microsystem>
+
+    <interaction>
+        <source_id>microsystem_01</source_id>
+        <target_id>microsystem_02</target_id>
+        <source_stakeholder_id>stakeholder_001</source_stakeholder_id>
+        <target_stakeholder_id>stakeholder_002</target_stakeholder_id>
+        <services>sensor_data</services>
+        <protocol>OPC UA</protocol>
+        <frequency>periodic</frequency>
+        <stakeholder_relationship>inter</stakeholder_relationship>
+    </interaction>
+</systemModel>

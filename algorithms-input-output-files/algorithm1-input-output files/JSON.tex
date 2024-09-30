@@ -1,0 +1,29 @@
+{
+  "microsystems": [
+    {
+      "id": "microsystem_01",
+      "name": "Temperature Sensor",
+      "description": "Measures temperature in the environment",
+      "type": "Field Device",
+      "role": "data acquisition",
+      "asset": "Temperature Sensor Module",
+      "shell": ["provide communication", "provide data"],
+      "provides": ["sensor_data"],
+      "consumes": ["calibration_commands"],
+      "stakeholder_id": "stakeholder_001",
+      "stakeholder_description": "Manufacturer"
+    }
+  ],
+  "interactions": [
+    {
+      "source_id": "microsystem_01",
+      "target_id": "microsystem_02",
+      "source_stakeholder_id": "stakeholder_001",
+      "target_stakeholder_id": "stakeholder_002",
+      "services": ["sensor_data"],
+      "protocol": "OPC UA",
+      "frequency": "periodic",
+      "stakeholder_relationship": "inter"
+    }
+  ]
+}

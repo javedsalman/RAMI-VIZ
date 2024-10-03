@@ -1,0 +1,509 @@
+\section{SHP DSL}
+\noindent
+\scriptsize
+\begin{verbatim}
+# Microsystems of Stakeholder-1 (SHP Vendor)
+
+microsystem {
+  id: "PDM"
+  type: "Product Design Microsystem"
+  role: "Design"
+  asset: "CAD Software"
+  shell: "Digital Twin of Product Design"
+  provides: ["Design Specifications", "Bill of Materials"]
+  consumes: ["User Requirements"]
+  stakeholder: "SHP Vendor"
+  layers: ["Information Layer", "Business Layer"]
+}
+
+microsystem {
+  id: "SCPM"
+  type: "Smart Contract Proxy Microsystem"
+  role: "Contract Management"
+  asset: "Smart Contract Module"
+  shell: "Contract Management Shell"
+  provides: ["Contract Management", "Transaction Data"]
+  consumes: ["Order Data", "User Agreements"]
+  stakeholder: "SHP Vendor"
+  layers: ["Business Layer"]
+}
+
+microsystem {
+  id: "SWMM"
+  type: "Smart Workflow Management Microsystem"
+  role: "Workflow Management"
+  asset: "Workflow Management Software"
+  shell: "Workflow Digital Twin"
+  provides: ["Workflow Automation", "Task Scheduling"]
+  consumes: ["Manufacturing Orders"]
+  stakeholder: "SHP Vendor"
+  layers: ["Functional Layer"]
+}
+
+microsystem {
+  id: "IMM"
+  type: "Inventory Management Microsystem"
+  role: "Inventory Management"
+  asset: "Inventory Control System"
+  shell: "Inventory Management Shell"
+  provides: ["Inventory Levels", "Reorder Alerts"]
+  consumes: ["Usage Data", "Stock Inputs"]
+  stakeholder: "SHP Vendor"
+  layers: ["Functional Layer"]
+}
+
+microsystem {
+  id: "PLM"
+  type: "Production Line Microsystem"
+  role: "Production"
+  asset: "Production Line Equipment"
+  shell: "Production Line Digital Twin"
+  provides: ["Production Data", "Status Updates"]
+  consumes: ["Production Orders"]
+  stakeholder: "SHP Vendor"
+  layers: ["Functional Layer", "Integration Layer"]
+  protocol: "OPC-UA"
+}
+
+microsystem {
+  id: "LRM"
+  type: "Logistic Robot Microsystem"
+  role: "Logistics"
+  asset: "Logistic Robot"
+  shell: "Logistic Robot Shell"
+  provides: ["Logistics Data", "Material Handling"]
+  consumes: ["Logistics Commands"]
+  stakeholder: "SHP Vendor"
+  layers: ["Integration Layer", "Functional Layer"]
+}
+
+microsystem {
+  id: "HWAM"
+  type: "Human/Worker Aide Microsystem"
+  role: "Assistance"
+  asset: "Worker Assistance Device"
+  shell: "Worker Aide Shell"
+  provides: ["Human Assistance", "Process Monitoring"]
+  consumes: ["Worker Commands"]
+  stakeholder: "SHP Vendor"
+  layers: ["Integration Layer"]
+}
+
+microsystem {
+  id: "SEMM"
+  type: "Smart Energy Management Microsystem"
+  role: "Energy Optimization"
+  asset: "Energy Management System"
+  shell: "Energy Management Shell"
+  provides: ["Energy Consumption Data"]
+  consumes: ["Energy Management Commands"]
+  stakeholder: "SHP Vendor"
+  layers: ["Information Layer", "Integration Layer"]
+  protocol: "Z-Wave"
+}
+
+microsystem {
+  id: "PIM"
+  type: "Production Information Microsystem"
+  role: "Information Management"
+  asset: "Production Data Management System"
+  shell: "Production Information Shell"
+  provides: ["Production Metrics", "Performance Data"]
+  consumes: ["Production Orders", "Status Requests"]
+  stakeholder: "SHP Vendor"
+  layers: ["Information Layer"]
+  protocol: "ISO-10303"
+}
+
+microsystem {
+  id: "DTM"
+  type: "Deployment Technician Microsystem"
+  role: "Deployment and Maintenance"
+  asset: "Deployment Tools"
+  shell: "Deployment Technician Shell"
+  provides: ["Deployment Data", "Training Feedback"]
+  consumes: ["Deployment Commands", "SHP Specifications"]
+  stakeholder: "SHP Vendor"
+  layers: ["Integration Layer"]
+}
+
+microsystem {
+  id: "TEM"
+  type: "Training and Education Microsystem"
+  role: "Training and Support"
+  asset: "Training Platform"
+  shell: "Training and Education Shell"
+  provides: ["Training Content", "Usage Guidelines"]
+  consumes: ["User Feedback"]
+  stakeholder: "SHP Vendor"
+  layers: ["Functional Layer"]
+}
+
+# Microsystems of Stakeholder-2 (ECU Vendor)
+
+microsystem {
+  id: "PDM"
+  type: "Product Design Microsystem"
+  role: "Design"
+  asset: "CAD Software"
+  shell: "Digital Twin of Product Design"
+  provides: ["Design Specifications", "Bill of Materials"]
+  consumes: ["User Requirements"]
+  stakeholder: "ECU Vendor"
+  layers: ["Information Layer", "Business Layer"]
+}
+
+microsystem {
+  id: "PLM"
+  type: "Production Line Microsystem"
+  role: "Production"
+  asset: "Production Line Equipment"
+  shell: "Production Line Digital Twin"
+  provides: ["Production Data", "Status Updates"]
+  consumes: ["Production Orders"]
+  stakeholder: "ECU Vendor"
+  layers: ["Functional Layer", "Integration Layer"]
+  protocol: "OPC-UA"
+}
+
+microsystem {
+  id: "PIM"
+  type: "Production Information Microsystem"
+  role: "Information Management"
+  asset: "Production Data Management System"
+  shell: "Production Information Shell"
+  provides: ["Production Metrics", "Performance Data"]
+  consumes: ["Production Orders", "Status Requests"]
+  stakeholder: "ECU Vendor"
+  layers: ["Information Layer"]
+  protocol: "ISO 10303"
+}
+
+microsystem {
+  id: "TEM"
+  type: "Training and Education Microsystem"
+  role: "Training and Support"
+  asset: "Training Platform"
+  shell: "Training and Education Shell"
+  provides: ["Training Content", "Usage Guidelines"]
+  consumes: ["User Feedback"]
+  stakeholder: "ECU Vendor"
+  layers: ["Functional Layer"]
+}
+
+microsystem {
+  id: "SDM"
+  type: "Software Development Microsystem"
+  role: "Software Development"
+  asset: "Software Development Environment"
+  shell: "Software Development Shell"
+  provides: ["Embedded Software", "Updates"]
+  consumes: ["Requirements", "Design Inputs"]
+  stakeholder: "ECU Vendor"
+  layers: ["Information Layer"]
+}
+
+microsystem {
+  id: "SWMM"
+  type: "Smart Workflow Management Microsystem"
+  role: "Workflow Management"
+  asset: "Workflow Management Software"
+  shell: "Workflow Digital Twin"
+  provides: ["Workflow Automation", "Task Scheduling"]
+  consumes: ["Manufacturing Orders"]
+  stakeholder: "ECU Vendor"
+  layers: ["Functional Layer"]
+}
+
+microsystem {
+  id: "SCPM"
+  type: "Smart Contract Proxy Microsystem"
+  role: "Contract Management"
+  asset: "Smart Contract Module"
+  shell: "Contract Management Shell"
+  provides: ["Contract Management", "Transaction Data"]
+  consumes: ["Order Data", "User Agreements"]
+  stakeholder: "ECU Vendor"
+  layers: ["Business Layer"]
+}
+
+# Microsystems of Stakeholder-3 (Final User)
+
+microsystem {
+  id: "UISHPM"
+  type: "User Interface and SHP Management Microsystem"
+  role: "User Interaction"
+  asset: "User Interface"
+  shell: "User Interface Shell"
+  provides: ["User Commands", "Performance Data"]
+  consumes: ["Usage Instructions", "SHP Status"]
+  stakeholder: "Final User"
+  layers: ["Information Layer"]
+}
+
+microsystem {
+  id: "SHPOLS"
+  type: "SHP Ordering Legacy System"
+  role: "Order Management"
+  asset: "Ordering System"
+  shell: "Legacy System Shell"
+  provides: ["Order Processing", "Order Confirmation"]
+  consumes: ["User Orders"]
+  stakeholder: "Final User"
+  layers: ["Integration Layer"]
+}
+\end{verbatim}
+
+
+\section{SHP input.json}
+\noindent
+\scriptsize
+\begin{verbatim}
+[
+    {
+        "id": "PDM",
+        "type": "Product Design Microsystem",
+        "role": "Design",
+        "asset": "CAD Software",
+        "shell": "Digital Twin of Product Design",
+        "provides": ["Design Specifications", "Bill of Materials"],
+        "consumes": ["User Requirements"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Information Layer", "Business Layer"],
+        "coordinates": {"X": 3, "Y": 1, "Z": 2}
+    },
+    {
+        "id": "SCPM",
+        "type": "Smart Contract Proxy Microsystem",
+        "role": "Contract Management",
+        "asset": "Smart Contract Module",
+        "shell": "Contract Management Shell",
+        "provides": ["Contract Management", "Transaction Data"],
+        "consumes": ["Order Data", "User Agreements"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Business Layer"],
+        "coordinates": {"X": 4, "Y": 2, "Z": 1}
+    },
+    {
+        "id": "SWMM",
+        "type": "Smart Workflow Management Microsystem",
+        "role": "Workflow Management",
+        "asset": "Workflow Management Software",
+        "shell": "Workflow Digital Twin",
+        "provides": ["Workflow Automation", "Task Scheduling"],
+        "consumes": ["Manufacturing Orders"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Functional Layer"],
+        "coordinates": {"X": 3, "Y": 3, "Z": 2}
+    },
+    {
+        "id": "IMM",
+        "type": "Inventory Management Microsystem",
+        "role": "Inventory Management",
+        "asset": "Inventory Control System",
+        "shell": "Inventory Management Shell",
+        "provides": ["Inventory Levels", "Reorder Alerts"],
+        "consumes": ["Usage Data", "Stock Inputs"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Functional Layer"],
+        "coordinates": {"X": 3, "Y": 3, "Z": 2}
+    },
+    {
+        "id": "PLM",
+        "type": "Production Line Microsystem",
+        "role": "Production",
+        "asset": "Production Line Equipment",
+        "shell": "Production Line Digital Twin",
+        "provides": ["Production Data", "Status Updates"],
+        "consumes": ["Production Orders"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Functional Layer", "Integration Layer"],
+        "protocol": "OPC-UA",
+        "coordinates": {"X": 4, "Y": 4, "Z": 3}
+    },
+    {
+        "id": "LRM",
+        "type": "Logistic Robot Microsystem",
+        "role": "Logistics",
+        "asset": "Logistic Robot",
+        "shell": "Logistic Robot Shell",
+        "provides": ["Logistics Data", "Material Handling"],
+        "consumes": ["Logistics Commands"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Integration Layer", "Functional Layer"],
+        "coordinates": {"X": 5, "Y": 3, "Z": 2}
+    },
+    {
+        "id": "HWAM",
+        "type": "Human/Worker Aide Microsystem",
+        "role": "Assistance",
+        "asset": "Worker Assistance Device",
+        "shell": "Worker Aide Shell",
+        "provides": ["Human Assistance", "Process Monitoring"],
+        "consumes": ["Worker Commands"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Integration Layer"],
+        "coordinates": {"X": 5, "Y": 4, "Z": 1}
+    },
+    {
+        "id": "SEMM",
+        "type": "Smart Energy Management Microsystem",
+        "role": "Energy Optimization",
+        "asset": "Energy Management System",
+        "shell": "Energy Management Shell",
+        "provides": ["Energy Consumption Data"],
+        "consumes": ["Energy Management Commands"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Information Layer", "Integration Layer"],
+        "protocol": "Z-Wave",
+        "coordinates": {"X": 3, "Y": 3, "Z": 2}
+    },
+    {
+        "id": "PIM",
+        "type": "Production Information Microsystem",
+        "role": "Information Management",
+        "asset": "Production Data Management System",
+        "shell": "Production Information Shell",
+        "provides": ["Production Metrics", "Performance Data"],
+        "consumes": ["Production Orders", "Status Requests"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Information Layer"],
+        "protocol": "ISO-10303",
+        "coordinates": {"X": 4, "Y": 2, "Z": 2}
+    },
+    {
+        "id": "DTM",
+        "type": "Deployment Technician Microsystem",
+        "role": "Deployment and Maintenance",
+        "asset": "Deployment Tools",
+        "shell": "Deployment Technician Shell",
+        "provides": ["Deployment Data", "Training Feedback"],
+        "consumes": ["Deployment Commands", "SHP Specifications"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Integration Layer"],
+        "coordinates": {"X": 3, "Y": 5, "Z": 1}
+    },
+    {
+        "id": "TEM",
+        "type": "Training and Education Microsystem",
+        "role": "Training and Support",
+        "asset": "Training Platform",
+        "shell": "Training and Education Shell",
+        "provides": ["Training Content", "Usage Guidelines"],
+        "consumes": ["User Feedback"],
+        "stakeholder": "SHP Vendor",
+        "layers": ["Functional Layer"],
+        "coordinates": {"X": 4, "Y": 1, "Z": 2}
+    },
+    {
+        "id": "PDM",
+        "type": "Product Design Microsystem",
+        "role": "Design",
+        "asset": "CAD Software",
+        "shell": "Digital Twin of Product Design",
+        "provides": ["Design Specifications", "Bill of Materials"],
+        "consumes": ["User Requirements"],
+        "stakeholder": "ECU Vendor",
+        "layers": ["Information Layer", "Business Layer"],
+        "coordinates": {"X": 3, "Y": 1, "Z": 2}
+    },
+    {
+        "id": "PLM",
+        "type": "Production Line Microsystem",
+        "role": "Production",
+        "asset": "Production Line Equipment",
+        "shell": "Production Line Digital Twin",
+        "provides": ["Production Data", "Status Updates"],
+        "consumes": ["Production Orders"],
+        "stakeholder": "ECU Vendor",
+        "layers": ["Functional Layer", "Integration Layer"],
+        "protocol": "OPC-UA",
+        "coordinates": {"X": 4, "Y": 4, "Z": 3}
+    },
+    {
+        "id": "PIM",
+        "type": "Production Information Microsystem",
+        "role": "Information Management",
+        "asset": "Production Data Management System",
+        "shell": "Production Information Shell",
+        "provides": ["Production Metrics", "Performance Data"],
+        "consumes": ["Production Orders", "Status Requests"],
+        "stakeholder": "ECU Vendor",
+        "layers": ["Information Layer"],
+        "protocol": "ISO 10303",
+        "coordinates": {"X": 4, "Y": 2, "Z": 2}
+    },
+    {
+        "id": "TEM",
+        "type": "Training and Education Microsystem",
+        "role": "Training and Support",
+        "asset": "Training Platform",
+        "shell": "Training and Education Shell",
+        "provides": ["Training Content", "Usage Guidelines"],
+        "consumes": ["User Feedback"],
+        "stakeholder": "ECU Vendor",
+        "layers": ["Functional Layer"],
+        "coordinates": {"X": 4, "Y": 1, "Z": 2}
+    },
+    {
+        "id": "SDM",
+        "type": "Software Development Microsystem",
+        "role": "Software Development",
+        "asset": "Software Development Environment",
+        "shell": "Software Development Shell",
+        "provides": ["Embedded Software", "Updates"],
+        "consumes": ["Requirements", "Design Inputs"],
+        "stakeholder": "ECU Vendor",
+        "layers": ["Information Layer"],
+        "coordinates": {"X": 2, "Y": 3, "Z": 2}
+    },
+    {
+        "id": "SWMM",
+        "type": "Smart Workflow Management Microsystem",
+        "role": "Workflow Management",
+        "asset": "Workflow Management Software",
+        "shell": "Workflow Digital Twin",
+        "provides": ["Workflow Automation", "Task Scheduling"],
+        "consumes": ["Manufacturing Orders"],
+        "stakeholder": "ECU Vendor",
+        "layers": ["Functional Layer"],
+        "coordinates": {"X": 3, "Y": 3, "Z": 2}
+    },
+    {
+        "id": "SCPM",
+        "type": "Smart Contract Proxy Microsystem",
+        "role": "Contract Management",
+        "asset": "Smart Contract Module",
+        "shell": "Contract Management Shell",
+        "provides": ["Contract Management", "Transaction Data"],
+        "consumes": ["Order Data", "User Agreements"],
+        "stakeholder": "ECU Vendor",
+        "layers": ["Business Layer"],
+        "coordinates": {"X": 4, "Y": 2, "Z": 1}
+    },
+    {
+        "id": "UISHPM",
+        "type": "User Interface and SHP Management Microsystem",
+        "role": "User Interaction",
+        "asset": "User Interface",
+        "shell": "User Interface Shell",
+        "provides": ["User Commands", "Performance Data"],
+        "consumes": ["Usage Instructions", "SHP Status"],
+        "stakeholder": "Final User",
+        "layers": ["Information Layer"],
+        "coordinates": {"X": 2, "Y": 6, "Z": 2}
+    },
+    {
+        "id": "SHPOLS",
+        "type": "SHP Ordering Legacy System",
+        "role": "Order Management",
+        "asset": "Ordering System",
+        "shell": "Legacy System Shell",
+        "provides": ["Order Processing", "Order Confirmation"],
+        "consumes": ["User Orders"],
+        "stakeholder": "Final User",
+        "layers": ["Integration Layer"],
+        "coordinates": {"X": 5, "Y": 2, "Z": 1}
+    }
+]
+\end{verbatim}

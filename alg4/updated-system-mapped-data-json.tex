@@ -1,0 +1,62 @@
+{
+  "microsystems": [
+    {
+      "id": "microsystem_01",
+      "name": "Temperature Sensor",
+      "description": "Measures temperature in the environment",
+      "type": "Field Device",
+      "role": "data acquisition",
+      "asset": "Temperature Sensor Module",
+      "shell": ["provide communication", "provide data"],
+      "provides": ["sensor_data"],
+      "consumes": ["calibration_commands"],
+      "stakeholder_id": "stakeholder_001",
+      "stakeholder_description": "Manufacturer",
+      "coordinates": {
+        "X": "1 <= x < 2",
+        "Y": "2 <= y < 3",
+        "Z": {
+          "Asset": 0,
+          "Integration": 1,
+          "Communication": 2
+        }
+      },
+      "cluster_id": "cluster_1",  // Cluster ID assigned by DSM clustering
+      "phases": ["Development", "Production"]  // Phases the microsystem belongs to
+    },
+    {
+      "id": "microsystem_02",
+      "name": "Processing Unit",
+      "description": "Processes sensor data for analysis",
+      "type": "Control Device",
+      "role": "data processing",
+      "asset": "Processing Module",
+      "shell": ["receive data", "process data"],
+      "provides": ["processed_data"],
+      "consumes": ["sensor_data"],
+      "stakeholder_id": "stakeholder_002",
+      "stakeholder_description": "Data Processor",
+      "coordinates": {
+        "X": "2 <= x < 3",
+        "Y": "2 <= y < 3",
+        "Z": {
+          "Functional": 4
+        }
+      },
+      "cluster_id": "cluster_1",  // Same cluster since there's high interaction with microsystem_01
+      "phases": ["Production", "Maintenance"]  // Multiple phases assignment
+    }
+  ],
+  "interactions": [
+    {
+      "source_id": "microsystem_01",
+      "target_id": "microsystem_02",
+      "source_stakeholder_id": "stakeholder_001",
+      "target_stakeholder_id": "stakeholder_002",
+      "services": ["sensor_data"],
+      "protocol": "OPC UA",
+      "frequency": "periodic",
+      "stakeholder_relationship": "inter"
+    }
+  ]
+}

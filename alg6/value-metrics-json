@@ -1,0 +1,103 @@
+{
+  "stakeholders": [
+    {
+      "stakeholder_id": "stakeholder_001",
+      "stakeholder_name": "Smart Heat Pump Vendor",
+      "microsystems": [
+        {
+          "microsystem_id": "microsystem_01",
+          "name": "Smart Contract Proxy Microsystem",
+          "value_metrics": {
+            "cost": 10,
+            "profit": 20,
+            "environmental_impact": 10
+          }
+        },
+        {
+          "microsystem_id": "microsystem_02",
+          "name": "Smart Workflow Management Microsystem",
+          "value_metrics": {
+            "cost": 15,
+            "profit": 15,
+            "environmental_impact": 5
+          }
+        },
+        {
+          "microsystem_id": "microsystem_03",
+          "name": "Production Line Microsystem",
+          "value_metrics": {
+            "cost": 35,
+            "profit": 30,
+            "environmental_impact": 30
+          }
+        },
+        {
+          "microsystem_id": "microsystem_04",
+          "name": "Smart Energy Management Microsystem",
+          "value_metrics": {
+            "cost": 25,
+            "profit": 25,
+            "environmental_impact": 40
+          }
+        },
+        {
+          "microsystem_id": "microsystem_05",
+          "name": "Deployment Technician Microsystem",
+          "value_metrics": {
+            "cost": 15,
+            "profit": 10,
+            "environmental_impact": 15
+          }
+        }
+      ]
+    },
+    {
+      "stakeholder_id": "stakeholder_002",
+      "stakeholder_name": "Embedded Control Unit Vendor",
+      "microsystems": [
+        {
+          "microsystem_id": "microsystem_06",
+          "name": "Software Development Microsystem",
+          "value_metrics": {
+            "cost": 30,
+            "profit": 20,
+            "environmental_impact": 40
+          }
+        },
+        {
+          "microsystem_id": "microsystem_07",
+          "name": "Production Information Microsystem",
+          "value_metrics": {
+            "cost": 70,
+            "profit": 80,
+            "environmental_impact": 60
+          }
+        }
+      ]
+    },
+    {
+      "stakeholder_id": "stakeholder_003",
+      "stakeholder_name": "Smart Heat Pump Final User",
+      "microsystems": [
+        {
+          "microsystem_id": "microsystem_08",
+          "name": "User Interface and SHP Management Microsystem",
+          "value_metrics": {
+            "cost": 85,
+            "profit": 95,
+            "environmental_impact": 90
+          }
+        },
+        {
+          "microsystem_id": "microsystem_09",
+          "name": "SHP Ordering System (Legacy)",
+          "value_metrics": {
+            "cost": 15,
+            "profit": 5,
+            "environmental_impact": 10
+          }
+        }
+      ]
+    }
+  ]
+}

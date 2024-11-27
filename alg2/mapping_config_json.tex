@@ -1,0 +1,134 @@
+{
+  "hierarchy_level": {  // X-Axis (Hierarchy Level) rules
+    "rules": [
+      {
+        "type": "Field Device",
+        "role": "data acquisition",
+        "map_to": "1 <= x < 2"  // Maps to Field Device on X-axis
+      },
+      {
+        "type": "Control Device", 
+        "role": "processing",  
+        "map_to": "2 <= x < 3"  // Maps to Control Device on X-axis
+      },
+      {
+        "type": "Station",  
+        "role": "monitoring",  
+        "map_to": "3 <= x < 4"  // Maps to Station on X-axis
+      },
+      {
+        "type": "Work Center",  
+        "role": "production management",  
+        "map_to": "4 <= x < 5"  // Maps to Work Center on X-axis
+      },
+      {
+        "type": "Enterprise",  
+        "role": "organization management",  
+        "map_to": "5 <= x < 6"  // Maps to Enterprise on X-axis
+      },
+      {
+        "type": "Connected World",  
+        "role": "data sharing",  
+        "map_to": "6 <= x"  // Maps to Connected World on X-axis
+      }
+    ],
+    "ext": {
+      "prompt_user": true,  // Prompt user if no match is found for the X-axis
+      "usr_rules": []  // Stores additional user-defined rules dynamically
+    }
+  },
+
+  "lifecycle": {  // Y-Axis (Lifecycle Stage) rules
+    "rules": {
+      "prov_rules": [  // Based on provided services
+        {
+          "service": "sensor_data",  
+          "map_to": "2 <= y < 3"  // Maps to Production (Instance) stage on Y-axis
+        },
+        {
+          "service": "maintenance_update",  
+          "map_to": "3 <= y < 4"  // Maps to Maintenance/Usage (Instance) on Y-axis
+        },
+        {
+          "service": "design_specification",  
+          "map_to": "0 <= y < 1"  // Maps to Development (Type) on Y-axis
+        }
+      ],
+      "cons_rules": [  // Based on consumed services
+        {
+          "service": "calibration_commands",  
+          "map_to": "1 <= y < 2"  // Maps to Maintenance/Usage (Type) on Y-axis
+        },
+        {
+          "service": "process_control",  
+          "map_to": "2 <= y < 3"  // Maps to Production (Instance) on Y-axis
+        }
+      ]
+    },
+    "ext": {
+      "prompt_user": true,  // Prompt user if no match is found for the Y-axis
+      "usr_rules": []  // Stores user-defined rules dynamically
+    }
+  },
+
+  "layer": {  // Z-Axis (Architecture Layers) rules
+    "rules": [
+      {
+        "protocol": "OPC UA",  // Matches communication protocol
+        "map_to": [0, 1, 2]  // Maps to Asset, Integration, Communication layers
+      },
+      {
+        "shell": "DigitalTwin_Sensor",  
+        "map_to": 4  // Maps to Functional Layer on Z-axis
+      },
+      {
+        "shell": "DigitalTwin_Controller",  
+        "map_to": 3  // Maps to Information Layer on Z-axis
+      },
+      {
+        "shell": "Business_Management_Module",  
+        "map_to": 5  // Maps to Business Layer on Z-axis
+      }
+    ],
+    "ext": {
+      "prompt_user": true,  // Prompt user if no match is found for the Z-axis
+      "usr_rules": []  // Stores additional user-defined rules dynamically
+    }
+  },
+
+  "coordinate_system_summary": {  // Full RAMI4.0 Cube Coordinate System
+    "x_axis": {  // X-Axis (Hierarchy Levels)
+      "ranges": {
+        "product": "0 <= x < 1",
+        "field_device": "1 <= x < 2",
+        "control_device": "2 <= x < 3",
+        "station": "3 <= x < 4",
+        "work_center": "4 <= x < 5",
+        "enterprise": "5 <= x < 6",
+        "connected_world": "6 <= x"
+      }
+    },
+    "y_axis": {  // Y-Axis (Lifecycle & Value Stream)
+      "ranges": {
+        "development_type": "0 <= y < 1",
+        "maintenance_type": "1 <= y < 2",
+        "production_instance": "2 <= y < 3",
+        "maintenance_instance": "3 <= y < 4"
+      }
+    },
+    "z_axis": {  // Z-Axis (Architecture Layers)
+      "discrete_values": {
+        "asset": 0,
+        "integration": 1,
+        "communication": 2,
+        "information": 3,
+        "functional": 4,
+        "business": 5
+      }
+    },
+    "example": {  // Example of a system's position on RAMI4.0 axes
+      "description": "A Control Device, in the Production (Instance) stage, and in the Functional Layer",
+      "coordinates": "(2 <= x < 3, 2 <= y < 3, z = 4)"
+    }
+  }
+}

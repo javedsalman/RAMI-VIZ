@@ -1,0 +1,24 @@
+Microsystem {
+    id: "microsystem_01",  // Unique identifier for the microsystem
+    name: "Temperature Sensor",  // Name of the microsystem
+    description: "Sensor that measures temperature",  // Description
+    type: "Field Device",  // Category (e.g., Field Device, Control Device)
+    role: "data acquisition",  // Operational role
+    asset: "Temperature Sensor Module",  // Physical asset
+    shell: ["provide data", "provide communication"],  // Digital twin capabilities
+    provides: ["sensor_data"],  // Services provided
+    consumes: ["calibration_commands"],  // Services consumed
+    stakeholder_id: "stakeholder_001",  // Unique identifier for the stakeholder
+    stakeholder_description: "Manufacturer"  // Description of the associated stakeholder (e.g., Manufacturer, Supplier)
+}
+
+Interaction {
+    source_id: "microsystem_01",  // ID of the microsystem initiating interaction
+    target_id: "microsystem_02",  // ID of the microsystem receiving interaction
+    source_stakeholder_id: "stakeholder_001",  // Stakeholder ID of source microsystem
+    target_stakeholder_id: "stakeholder_002",  // Stakeholder ID of target microsystem
+    services: ["sensor_data"],  // Services involved in the interaction
+    protocol: "OPC UA",  // Communication protocol
+    frequency: "periodic",  // Frequency of the interaction
+    stakeholder_relationship: "inter"  // intra- or inter-stakeholder relationship
+}

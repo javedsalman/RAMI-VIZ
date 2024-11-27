@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="microsystem">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="description" type="xs:string"/>
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="role" type="xs:string"/>
+                <xs:element name="asset" type="xs:string"/>
+                <xs:element name="shell" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="capability" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="provides" type="xs:string"/>
+                <xs:element name="consumes" type="xs:string"/>
+                <xs:element name="stakeholder_id" type="xs:string"/>
+                <xs:element name="stakeholder_description" type="xs:string"/>  <!-- Added description -->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="interaction">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="source_id" type="xs:string"/>
+                <xs:element name="target_id" type="xs:string"/>
+                <xs:element name="source_stakeholder_id" type="xs:string"/>
+                <xs:element name="target_stakeholder_id" type="xs:string"/>
+                <xs:element name="services" type="xs:string"/>
+                <xs:element name="protocol" type="xs:string"/>
+                <xs:element name="frequency" type="xs:string"/>
+                <xs:element name="stakeholder_relationship" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,25 @@
+{
+    "x_limits": [
+        0,
+        6
+    ],
+    "y_limits": [
+        0,
+        4
+    ],
+    "z_limits": [
+        0,
+        5
+    ],
+    "ellipsoid_radii": [
+        0.2,
+        0.1,
+        0.3
+    ],
+    "stakeholder_colors": {
+        "Stakeholder-1": "red",
+        "Stakeholder-2": "green",
+        "Stakeholder-3": "blue",
+        "Stakeholder-4": "yellow"
+    }
+}

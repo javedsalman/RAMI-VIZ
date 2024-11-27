@@ -1,0 +1,31 @@
+{
+  "system_components": [
+    {
+      "component_id": "SC1",
+      "name": "SHP Mechanical",
+      "stakeholders_involved": [
+        {
+          "stakeholder_id": "stakeholder_001",
+          "engineering_phases": ["Requirements", "Functional Design", "Deployment & Commissioning"],
+          "lifecycle_stages": ["Development", "Production"]
+        }
+      ]
+    },
+    {
+      "component_id": "SC2",
+      "name": "SHP ECU",
+      "stakeholders_involved": [
+        {
+          "stakeholder_id": "stakeholder_002",
+          "engineering_phases": ["Procurement & Engineering", "Operation & Management"],
+          "lifecycle_stages": ["Production", "Maintenance"]
+        },
+        {
+          "stakeholder_id": "stakeholder_001",
+          "engineering_phases": ["Deployment & Commissioning"],
+          "lifecycle_stages": ["Production"]
+        }
+      ]
+    }
+  ]
+}

@@ -170,7 +170,7 @@ The script visualizes the interaction matrix with clusters:
 
 Example visualization:
 
-![Interaction Matrix Visualization](https://via.placeholder.com/600x400?text=Interaction+Matrix)
+![Interaction Matrix Visualization]([[https://github.com/javedsalman/RAMI4.0-VIZ/blob/main/alg4/javed2.png/600x400?text=Interaction+Matrix])
 
 ---
 

@@ -1,4 +1,4 @@
-# RAMIX- RAMI4.0 Value Chain Visualization Tool for Smart Manufacturing Ecosystems
+# RAMI-VIZ - RAMI4.0 Value Chain Visualization Tool for Smart Manufacturing Ecosystems
 
 <img width="1512" alt="rami-vcvt-s4" src="https://github.com/javedsalman/RAMI4.0-VIZ/assets/71730474/759993d9-d2c7-45c6-975e-0b994de34606">
 

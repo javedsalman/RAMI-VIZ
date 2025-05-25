@@ -1,0 +1,97 @@
+{
+  "microsystems": [
+    {
+      "microsystem": {
+        "id": "sensor01",
+        "name": "Temperature Sensor",
+        "description": "Monitors room temperature",
+        "type": "Field Device",
+        "role": "sensor",
+        "asset": "RoomSensor_1",
+        "shell": [
+          "physical",
+          "communication"
+        ],
+        "provides": [
+          "machine_data"
+        ],
+        "consumes": [],
+        "interactions": [
+          "controller01"
+        ],
+        "metrics": {
+          "cost": 50,
+          "value": 120
+        },
+        "phase": "Production"
+      },
+      "microsystem_stakeholder": {
+        "id": "stk1",
+        "description": "Sensor Vendor"
+      }
+    },
+    {
+      "microsystem": {
+        "id": "controller01",
+        "name": "Heat Controller",
+        "description": "Controls heat pump actuator",
+        "type": "Control Device",
+        "role": "controller",
+        "asset": "Controller_XYZ",
+        "shell": [
+          "integration",
+          "function"
+        ],
+        "provides": [
+          "actuation_command"
+        ],
+        "consumes": [
+          "machine_data"
+        ],
+        "interactions": [
+          "actuator01"
+        ],
+        "metrics": {
+          "cost": 100,
+          "value": 300
+        },
+        "phase": "Production"
+      },
+      "microsystem_stakeholder": {
+        "id": "stk2",
+        "description": "Controller Provider"
+      }
+    },
+    {
+      "microsystem": {
+        "id": "actuator01",
+        "name": "Heat Pump Actuator",
+        "description": "Executes heating commands",
+        "type": "Station",
+        "role": "assembly",
+        "asset": "HeatPump01",
+        "shell": [
+          "physical",
+          "integration",
+          "function"
+        ],
+        "provides": [
+          "status_data"
+        ],
+        "consumes": [
+          "actuation_command"
+        ],
+        "interactions": [],
+        "metrics": {
+          "cost": 150,
+          "value": 400
+        },
+        "phase": "Production"
+      },
+      "microsystem_stakeholder": {
+        "id": "stk3",
+        "description": "Actuator Supplier"
+      }
+    }
+  ]
+}
